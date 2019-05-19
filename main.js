@@ -8,8 +8,6 @@ const getSWData = async () => {
     return x;
   });
 
-  console.log(arrSW);
-
   const renderNames = () => {
     return `
       <ul>
