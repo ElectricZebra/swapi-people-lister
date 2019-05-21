@@ -1,6 +1,7 @@
 const namesList = document.getElementById('namesList');
 const ul = document.getElementById('namesList');
 const details = document.getElementById('details');
+const data = document.getElementById('data');
 
 const getSWData = async () => {
   const response = await fetch("https://swapi.co/api/people/?format=json");
@@ -26,16 +27,38 @@ const getSWData = async () => {
 
 
   namesList.addEventListener('click', (ev) => {
-    // console.dir(ev.target)
-    // const curObj = ;
+
     const curObj = arrSW.map(obj => {
       if (obj.name === ev.target.innerText) {
         console.log(obj)
-        details.innerHTML = `${obj.mass} ${obj.hair_color}`
+        const arrObj = Object.keys(obj);
+        console.log(arrObj)
+
+        details.innerHTML = arrObj.map(x =>
+          `<li>${ x }</li>`
+          ).join('')
+
+        const objLoop = () => {
+          const dataArr = [];
+          for (let key in obj) {
+            dataArr.push(obj[key])
+          }
+          return dataArr;
+        }
+        console.log(objLoop())
+
+        data.innerHTML = objLoop().map(y =>
+          `<li>${ y }</li>`
+          ).join('');
+
+
+
+        //  `<table>
+        // ${ obj.name } ${obj.mass} ${obj.hair_color}
+        // </table>`
       }
     })
-    // details.innerHTML = curObj
-    // console.dir(curObj)
+
   })
 }
 

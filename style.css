@@ -1,0 +1,14 @@
+body {
+  background-color: grey;
+}
+
+#namesDetails {
+  display: flex;
+}
+
+#container {
+  background-color: blue;
+  display: flex;
+}
+
+
