@@ -41,7 +41,8 @@ const getSWData = async () => {
         const objLoop = () => {
           const dataArr = [];
           for (let key in obj) {
-            dataArr.push(obj[key])
+            const sliceKey = obj[key].slice(0, 10);
+            dataArr.push(sliceKey);
           }
           return dataArr;
         }
