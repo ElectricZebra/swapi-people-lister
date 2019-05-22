@@ -30,33 +30,25 @@ const getSWData = async () => {
 
     const curObj = arrSW.map(obj => {
       if (obj.name === ev.target.innerText) {
-        console.log(obj)
         const arrObj = Object.keys(obj);
-        console.log(arrObj)
-
-        details.innerHTML = arrObj.map(x =>
-          `<li>${ x }</li>`
-          ).join('')
+        data.maxLength = 10;
 
         const objLoop = () => {
           const dataArr = [];
           for (let key in obj) {
-            const sliceKey = obj[key].slice(0, 10);
-            dataArr.push(sliceKey);
-          }
+            dataArr.push(obj[key]);}
           return dataArr;
         }
-        console.log(objLoop())
+
+        details.innerHTML = arrObj.map(x =>
+          `<li class='${x}'>${ x }</li>`
+          ).join('')
+
+
 
         data.innerHTML = objLoop().map(y =>
           `<li>${ y }</li>`
           ).join('');
-
-
-
-        //  `<table>
-        // ${ obj.name } ${obj.mass} ${obj.hair_color}
-        // </table>`
       }
     })
 

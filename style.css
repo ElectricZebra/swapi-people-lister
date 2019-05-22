@@ -11,3 +11,18 @@ body {
   display: flex;
 }
 
+#details {
+  list-style: none;
+  width: 100px;
+  overflow: hidden;
+}
+
+
+#data {
+  background-color: yellow;
+  list-style: none;
+  width: 300px;
+  overflow: hidden;
+}
+
+
