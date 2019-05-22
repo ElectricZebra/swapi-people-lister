@@ -24,14 +24,10 @@ const getSWData = async () => {
   }
   namesList.innerHTML = renderNames();
 
-
-
   namesList.addEventListener('click', (ev) => {
-
     const curObj = arrSW.map(obj => {
       if (obj.name === ev.target.innerText) {
         const arrObj = Object.keys(obj);
-        data.maxLength = 10;
 
         const objLoop = () => {
           const dataArr = [];
@@ -41,17 +37,14 @@ const getSWData = async () => {
         }
 
         details.innerHTML = arrObj.map(x =>
-          `<li class='${x}'>${ x }</li>`
+          `<li>${ x }</li>`
           ).join('')
-
-
 
         data.innerHTML = objLoop().map(y =>
           `<li>${ y }</li>`
           ).join('');
       }
     })
-
   })
 }
 
